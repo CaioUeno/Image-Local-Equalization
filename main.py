@@ -5,8 +5,7 @@ from equalization import equalize
 from image_merge import image_merge
 
 # Load the image
-#file_name = input('Insira o nome da imagem com extenção: ')
-file_name = 'foto.jpg' # REMOVER DEPOIS
+file_name = input('Insira o nome da imagem com extensão: ')
 img = plt.imread(file_name)
 
 # Ask the number of rows and columns and split the image
@@ -20,5 +19,7 @@ equal_list = [equalize(fragment) for fragment in fragment_list]
 # Join all fragments in a new image
 new_img = image_merge(equal_list, img.shape, rows, cols)
 
-plt.imshow(new_img, cmap="gray")
-plt.savefig("foto2.png") # ALTERAR?
+# Show and save
+new_file_name = input('Insira o nome da imagem alterada com extensão: ')
+plt.imshow(new_img, cmap='gray')
+plt.savefig(new_file_name) 
