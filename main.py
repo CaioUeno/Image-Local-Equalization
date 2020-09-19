@@ -9,8 +9,7 @@ def rgb2gray(m: np.ndarray, r=0.299, g=0.578, b=0.144) -> np.ndarray:
     return np.array(m_gray)
 
 # Load the image
-#file_name = input('Insira o nome da imagem com extenção: ')
-file_name = 'foto.jpg' # REMOVER DEPOIS
+file_name = input('Insira o nome da imagem com extensão: ')
 img = plt.imread(file_name)
 
 # Converts to grayscale if the image is RGB
@@ -29,5 +28,7 @@ equal_list = [equalize(fragment, size=img.max()) for fragment in fragment_list]
 # Join all fragments in a new image
 new_img = image_merge(equal_list, img.shape, rows, cols)
 
-plt.imshow(new_img, cmap="gray")
-plt.savefig("foto2.png") # ALTERAR?
+# Show and save
+new_file_name = input('Insira o nome da imagem alterada com extensão: ')
+plt.imshow(new_img, cmap='gray')
+plt.savefig(new_file_name) 
