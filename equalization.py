@@ -2,20 +2,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def equalize(m: np.ndarray) -> np.ndarray:
-    bins = range(0, 257)
-    hist, _ = np.histogram(m, bins)
+    caixas = range(0, 257)
+    hist, _ = np.histogram(m, caixas)
 
-    mn = sum(hist)
-    c = 255./mn
-    out_intensity = np.zeros(256)
-    for k in range(256):
-        soma = sum(hist[:k+1])
-        out_intensity[k] = c*soma
+    sum_hist = sum(hist)
+    const = 255/sum_hist
+    saida = np.zeros(256)
+    for i in range(256):
+        soma = sum(hist[:i+1])
+        saida[i] = soma*const
     
-    img_eq = np.zeros(m.shape)
-    num_rows, num_cols = m.shape
-    for row in range(num_rows):
-        for col in range(num_cols):
-            img_eq[row, col] = out_intensity[m[row, col]]
+    m_eq = np.zeros(m.shape)
+    n_lin, n_col = m.shape
+    for i in range(n_lin):
+        for j in range(n_col):
+            m_eq[i, j] = saida[m[i, j]]
     
-    return img_eq
+    return m_eq
