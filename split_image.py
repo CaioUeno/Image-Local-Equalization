@@ -32,11 +32,3 @@ def split_image(img: np.ndarray, n_rows: int, n_cols: int) -> list:
 
     # list of pieces using top->down and left->right notion
     return local_pieces
-
-
-m = np.array([[1,2,3,4,5,6,7],
-              [2,3,4,5,6,7,8],
-              [3,4,5,6,7,8,9]])
-
-l = split_image(m, 2, 2)
-print(l)

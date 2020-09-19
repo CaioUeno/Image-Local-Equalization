@@ -14,13 +14,11 @@ rows = int(input('Insira a quantidade de linhas que a imagem deve ser dividida: 
 cols = int(input('Insira a quantidade de colunas que a imagem deve ser dividida: '))
 fragment_list = split_image(img, rows, cols)
 
-# For each fragment, equalize it!3
-equal_list = []
-for fragment in fragment_list:
-    equal_list.append(equalize(fragment))
+# For each fragment, equalize it!
+equal_list = [equalize(fragment) for fragment in fragment_list]
 
-# Join all fragments in a new image3
-new_img = image_merge(equal_list,img.shape,rows,cols)
+# Join all fragments in a new image
+new_img = image_merge(equal_list, img.shape, rows, cols)
 
 plt.imshow(new_img, cmap="gray")
 plt.savefig("foto2.jpg") # ALTERAR?

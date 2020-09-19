@@ -19,10 +19,3 @@ def equalize(m: np.ndarray) -> np.ndarray:
             img_eq[row, col] = out_intensity[m[row, col]]
     
     return img_eq
-
-# img = plt.imread("foto.jpg")
-# print(img.shape)
-# img2 = equalize(img[0:200, 0:200])
-# plt.imshow(img2, cmap="gray")
-# plt.savefig("foto2.jpg")
-
