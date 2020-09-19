@@ -21,4 +21,4 @@ equal_list = [equalize(fragment) for fragment in fragment_list]
 new_img = image_merge(equal_list, img.shape, rows, cols)
 
 plt.imshow(new_img, cmap="gray")
-plt.savefig("foto2.jpg") # ALTERAR?
+plt.savefig("foto2.png") # ALTERAR?
